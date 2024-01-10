@@ -4,17 +4,19 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.doctree.Adapter.SpecialityAdapter;
 import com.example.doctree.DataModel.SpecialityModel;
 import com.example.doctree.R;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeFragment extends Fragment {
+public class SpecialityFragment extends Fragment {
 
     private RecyclerView recyclerView;
     private SpecialityAdapter adapter;
@@ -22,9 +24,9 @@ public class HomeFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_home, container, false);
+        View view = inflater.inflate(R.layout.fragment_speciality, container, false);
 
-        recyclerView = view.findViewById(R.id.recycle_view_category);
+        recyclerView = view.findViewById(R.id.recycler_view);
         specialityList = new ArrayList<>();
 
         // Populate your data here
@@ -95,35 +97,14 @@ public class HomeFragment extends Fragment {
                     break;
             }
 
-
             specialityList.add(specialityModel);
         }
 
+
         adapter = new SpecialityAdapter(requireContext(), specialityList);
-        recyclerView.setLayoutManager(new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false));
+        recyclerView.setLayoutManager(new GridLayoutManager(requireContext(), 2)); // Change the span count as needed
         recyclerView.setAdapter(adapter);
-        TextView seeAllCategory = view.findViewById(R.id.seeAllCategory);
-        // Set an OnClickListener to handle the click event
-        seeAllCategory.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Handle the click event here
-                seeAllCategory();
-            }
-        });
+
         return view;
     }
-
-    private void seeAllCategory() {
-        SpecialityFragment doctorFragment = new SpecialityFragment();
-
-        // Replace the current fragment with the new one
-        if (getFragmentManager() != null) {
-            getFragmentManager().beginTransaction()
-                    .replace(R.id.fragment_container, doctorFragment)
-                    .addToBackStack(null)  // Add to the back stack to allow navigating back
-                    .commit();
-        }
-    }
 }
-

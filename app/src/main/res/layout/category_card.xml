@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="4dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="16sp"
     >
 
 
@@ -13,15 +13,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
+        <View
+            android:id="@+id/symbolBg"
             android:layout_width="85dp"
             android:layout_height="85dp"
             android:background="@drawable/horizontal_scroll_bg"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <ImageView
+            android:id="@+id/symbol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/skin"
+            app:layout_constraintBottom_toBottomOf="@+id/symbolBg"
+            app:layout_constraintEnd_toEndOf="@+id/symbolBg"
+            app:layout_constraintStart_toStartOf="@+id/symbolBg"
+            app:layout_constraintTop_toTopOf="@+id/symbolBg" />
+
         <TextView
-            android:id="@+id/textView8"
+            android:id="@+id/specialityIn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
@@ -34,16 +45,13 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <ImageView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="32dp"
+            android:id="@+id/cardBg"
+            android:layout_width="113dp"
+            android:layout_height="134dp"
             android:background="@color/light_blue"
+            android:contentDescription="TODO"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:contentDescription="TODO" />
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
