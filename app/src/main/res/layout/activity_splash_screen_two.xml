@@ -7,7 +7,7 @@
     tools:context=".Activity.SplashScreenTwoActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/doctor_type"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -33,7 +33,7 @@
         android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/doctor_type" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/get_started"

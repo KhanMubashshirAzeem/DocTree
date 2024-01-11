@@ -24,6 +24,8 @@ public class DoctorFragment extends Fragment {
     public DoctorFragment() {
         // Required empty public constructor
     }
+
+
     public static DoctorFragment newInstance(String param1, String param2) {
         DoctorFragment fragment = new DoctorFragment();
         Bundle args = new Bundle();

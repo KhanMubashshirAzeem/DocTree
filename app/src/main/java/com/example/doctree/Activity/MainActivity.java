@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.example.doctree.Fragments.DoctorFragment;
 import com.example.doctree.Fragments.HomeFragment;
@@ -17,6 +18,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
+    private long pressedTime;
     ActivityMainBinding binding;
 
     @Override
@@ -32,6 +34,10 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         if (savedInstanceState == null) {
             loadFragment(new HomeFragment());
         }
+
+
+
+
     }
 
     @Override
@@ -66,4 +72,18 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     public void onPointerCaptureChanged(boolean hasCapture) {
         super.onPointerCaptureChanged(hasCapture);
     }
+
+    @Override
+    public void onBackPressed() {
+
+        if (pressedTime + 2000 > System.currentTimeMillis()) {
+            super.onBackPressed();
+            finish();
+        } else {
+            Toast.makeText(getBaseContext(), "Press back again to exit", Toast.LENGTH_SHORT).show();
+        }
+        pressedTime = System.currentTimeMillis();
+    }
+
+
 }

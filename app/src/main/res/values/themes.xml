@@ -1,12 +1,15 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.DocTree" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-    </style>
+<!-- Base application theme. -->
+<style name="Base.Theme.DocTree" parent="Theme.Material3.DayNight.NoActionBar">
+<!--     Customize your light theme here. -->
+     <item name="colorPrimary">@color/blue</item>
+     <item name="colorPrimaryVariant">@color/light_blue</item>
+     <item name="colorSecondary">@color/grey</item>
+     <item name="colorSecondaryVariant">@color/lite_green</item>
+<!--     <item name="android:windowBackground">@color/default_color</item>-->
+     <item name="android:statusBarColor">@color/blue</item>
+<!--     <item name="android:navigationBarColor">@color/default_color</item>-->
+</style>
 
-    <style name="Theme.DocTree" parent="Base.Theme.DocTree" />
-
-
-
+<style name="Theme.DocTree" parent="Base.Theme.DocTree" />
 </resources>

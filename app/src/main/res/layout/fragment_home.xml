@@ -173,13 +173,12 @@
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recycler_view_home"
+                android:id="@+id/recycler_view_top_doctor"
                 android:layout_width="match_parent"
-                android:layout_height="350dp"
+                android:layout_height="260dp"
                 android:layout_marginStart="32dp"
-                android:layout_marginTop="16sp"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="32dp"
-                android:layout_marginBottom="16sp"
                 android:backgroundTint="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -191,7 +190,7 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/recycler_view_home">
+                app:layout_constraintTop_toBottomOf="@id/recycler_view_top_doctor">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -266,50 +265,17 @@
                 app:layout_constraintTop_toBottomOf="@id/horizontalScrollView3" />
 
 
-            <HorizontalScrollView
-                android:id="@+id/horizontalScrollView4"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_docUVis"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:scrollbars="none"
+                android:layout_marginTop="16dp"
+                android:paddingStart="16sp"
+                android:paddingEnd="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:orientation="horizontal">
-
-                    <!-- ImageView items -->
-                    <ImageView
-                        android:layout_width="125dp"
-                        android:layout_height="148dp"
-                        android:layout_marginRight="8dp"
-                        android:background="@drawable/horizontal_scroll_bg" />
-
-                    <ImageView
-                        android:layout_width="125dp"
-                        android:layout_height="148dp"
-                        android:layout_marginRight="8dp"
-                        android:background="@drawable/horizontal_scroll_bg" />
-
-                    <ImageView
-                        android:layout_width="125dp"
-                        android:layout_height="148dp"
-                        android:layout_marginRight="8dp"
-                        android:background="@drawable/horizontal_scroll_bg" />
-
-                    <ImageView
-                        android:layout_width="125dp"
-                        android:layout_height="148dp"
-                        android:layout_marginRight="8dp"
-                        android:background="@drawable/horizontal_scroll_bg" />
-
-                    <!-- Add more ImageView items as needed -->
-
-                </LinearLayout>
-            </HorizontalScrollView>
+                app:layout_constraintTop_toBottomOf="@+id/tv" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
