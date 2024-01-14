@@ -5,11 +5,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.doctree.Adapter.DocUVisitedAdapter;
 import com.example.doctree.Adapter.SpecialityAdapter;
 import com.example.doctree.Adapter.TopDoctorsAdapter;
@@ -42,6 +40,8 @@ public class HomeFragment extends Fragment {
         populateTopDoctors();
         DoctorUVisited();
 
+        recyclerViewCategory.setNestedScrollingEnabled(false);
+
         TextView seeAllCategory = view.findViewById(R.id.seeAllCategory);
         seeAllCategory.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,7 +71,7 @@ public class HomeFragment extends Fragment {
 
     private void DoctorUVisited() {
         docUVisitedModelList = new ArrayList<>();
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 5; i++) {
             DocUVisitedModel docUVisitedModel1 = new DocUVisitedModel();
             switch (i) {
                 case 0:
@@ -93,6 +93,11 @@ public class HomeFragment extends Fragment {
                     docUVisitedModel1.setDocName("Aaron Gonzalez");
                     docUVisitedModel1.setDocType("Orthodontist");
                     docUVisitedModel1.setDocImg(R.drawable.doctor_4);
+                    break;
+                case 4:
+                    docUVisitedModel1.setDocName("Aaron K Gonzalez");
+                    docUVisitedModel1.setDocType("Orthodontist");
+                    docUVisitedModel1.setDocImg(R.drawable.doctor_2);
                     break;
                 default:
                     break;
